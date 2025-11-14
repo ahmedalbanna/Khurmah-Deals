@@ -14,12 +14,12 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
 const GenerateAdCopyInputSchema = z.object({
-  productDescription: z.string().describe('A description of the product or service being advertised.'),
+  productDescription: z.string().describe('وصف للمنتج أو الخدمة المعلن عنها.'),
 });
 export type GenerateAdCopyInput = z.infer<typeof GenerateAdCopyInputSchema>;
 
 const GenerateAdCopyOutputSchema = z.object({
-  adCopy: z.string().describe('The generated ad copy.'),
+  adCopy: z.string().describe('نص الإعلان الذي تم إنشاؤه.'),
 });
 export type GenerateAdCopyOutput = z.infer<typeof GenerateAdCopyOutputSchema>;
 
@@ -31,11 +31,11 @@ const prompt = ai.definePrompt({
   name: 'generateAdCopyPrompt',
   input: {schema: GenerateAdCopyInputSchema},
   output: {schema: GenerateAdCopyOutputSchema},
-  prompt: `You are an expert marketing copywriter. Please generate compelling ad copy for the following product or service description:
+  prompt: `أنت كاتب إعلانات تسويقية خبير. يرجى إنشاء نسخة إعلانية مقنعة لوصف المنتج أو الخدمة التالي باللغة العربية:
 
 {{{productDescription}}}
 
-Ad Copy:`,
+نص الإعلان:`,
 });
 
 const generateAdCopyFlow = ai.defineFlow(

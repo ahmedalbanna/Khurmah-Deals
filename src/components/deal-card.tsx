@@ -53,7 +53,7 @@ export function DealCard({ deal }: DealCardProps) {
       <CardFooter className="p-4 pt-0 flex justify-between items-center">
         <p className="text-xl font-bold text-primary">{deal.price}</p>
         <Button asChild variant="outline">
-          <Link href={`/deals/${deal.id}`}>View Deal</Link>
+          <Link href={`/deals/${deal.id}`}>عرض الصفقة</Link>
         </Button>
       </CardFooter>
     </Card>

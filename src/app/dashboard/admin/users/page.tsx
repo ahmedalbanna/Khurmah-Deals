@@ -38,12 +38,18 @@ export default function ManageUsersPage() {
       customer: 'secondary'
   } as const;
 
+  const roleTranslations = {
+    admin: 'مشرف',
+    store_owner: 'صاحب متجر',
+    customer: 'عميل'
+  }
+
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Manage Users</CardTitle>
+        <CardTitle>إدارة المستخدمين</CardTitle>
         <CardDescription>
-          A list of all users in the system.
+          قائمة بجميع المستخدمين في النظام.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -51,16 +57,16 @@ export default function ManageUsersPage() {
           <TableHeader>
             <TableRow>
               <TableHead className="hidden w-[100px] sm:table-cell">
-                <span className="sr-only">Avatar</span>
+                <span className="sr-only">الصورة الرمزية</span>
               </TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Role</TableHead>
-              <TableHead className="hidden md:table-cell">Email</TableHead>
+              <TableHead>الاسم</TableHead>
+              <TableHead>الدور</TableHead>
+              <TableHead className="hidden md:table-cell">البريد الإلكتروني</TableHead>
               <TableHead className="hidden md:table-cell">
-                Created at
+                تاريخ الإنشاء
               </TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">الإجراءات</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -85,7 +91,7 @@ export default function ManageUsersPage() {
                   </TableCell>
                   <TableCell className="font-medium">{user.name}</TableCell>
                   <TableCell>
-                    <Badge variant={roleVariant[user.role]}>{user.role.replace('_', ' ')}</Badge>
+                    <Badge variant={roleVariant[user.role]}>{roleTranslations[user.role]}</Badge>
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
                     {user.email}
@@ -102,13 +108,13 @@ export default function ManageUsersPage() {
                           variant="ghost"
                         >
                           <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">Toggle menu</span>
+                          <span className="sr-only">فتح القائمة</span>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                        <DropdownMenuLabel>الإجراءات</DropdownMenuLabel>
+                        <DropdownMenuItem>تعديل</DropdownMenuItem>
+                        <DropdownMenuItem className="text-destructive">حذف</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>

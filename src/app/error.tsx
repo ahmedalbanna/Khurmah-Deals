@@ -19,15 +19,15 @@ export default function Error({
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background text-center p-4">
       <Frown className="w-16 h-16 text-destructive mb-4" />
-      <h2 className="text-3xl font-bold font-headline mb-2">Oops, something went wrong!</h2>
-      <p className="text-muted-foreground mb-6 max-w-md">An unexpected error occurred. Please try again, or if the problem persists, contact support.</p>
+      <h2 className="text-3xl font-bold font-headline mb-2">عفواً، حدث خطأ ما!</h2>
+      <p className="text-muted-foreground mb-6 max-w-md">حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى، أو إذا استمرت المشكلة، اتصل بالدعم.</p>
       <Button
         onClick={
           // Attempt to recover by trying to re-render the segment
           () => reset()
         }
       >
-        Try again
+        حاول مرة أخرى
       </Button>
     </div>
   );

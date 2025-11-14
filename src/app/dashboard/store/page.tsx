@@ -35,17 +35,17 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
 const chartData = [
-  { month: 'January', views: 1860 },
-  { month: 'February', views: 3050 },
-  { month: 'March', views: 2370 },
-  { month: 'April', views: 730 },
-  { month: 'May', views: 2090 },
-  { month: 'June', views: 2140 },
+  { month: 'يناير', views: 1860 },
+  { month: 'فبراير', views: 3050 },
+  { month: 'مارس', views: 2370 },
+  { month: 'أبريل', views: 730 },
+  { month: 'مايو', views: 2090 },
+  { month: 'يونيو', views: 2140 },
 ];
 
 const chartConfig = {
   views: {
-    label: 'Views',
+    label: 'المشاهدات',
     color: 'hsl(var(--primary))',
   },
 };
@@ -59,52 +59,59 @@ export default function StoreDashboard() {
     rejected: 'destructive',
   } as const;
 
+  const statusTranslations = {
+    approved: 'مقبول',
+    pending: 'قيد المراجعة',
+    rejected: 'مرفوض',
+  };
+
+
   return (
     <div className="grid gap-6">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Ad Views</CardTitle>
+            <CardTitle className="text-sm font-medium">إجمالي مشاهدات الإعلان</CardTitle>
             <Eye className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">45,231</div>
             <p className="text-xs text-muted-foreground">
-              +20.1% from last month
+              +20.1% عن الشهر الماضي
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Messages</CardTitle>
+            <CardTitle className="text-sm font-medium">الرسائل</CardTitle>
             <MessageSquare className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+23</div>
-            <p className="text-xs text-muted-foreground">+5 unread</p>
+            <p className="text-xs text-muted-foreground">+5 غير مقروءة</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Ads</CardTitle>
+            <CardTitle className="text-sm font-medium">الإعلانات النشطة</CardTitle>
             <Activity className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">5</div>
-            <p className="text-xs text-muted-foreground">out of 10 available</p>
+            <p className="text-xs text-muted-foreground">من 10 متاحة</p>
           </CardContent>
         </Card>
         <Card className="bg-primary text-primary-foreground">
           <CardHeader className="pb-2">
-            <CardTitle>Create a New Ad</CardTitle>
+            <CardTitle>إنشاء إعلان جديد</CardTitle>
             <CardDescription className="text-primary-foreground/80">
-              Get more customers by posting a new deal.
+              احصل على المزيد من العملاء عن طريق نشر صفقة جديدة.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Button variant="secondary" asChild>
               <Link href="/dashboard/store/ads/new">
-                <PlusCircle className="mr-2 h-4 w-4" /> Add New Ad
+                <PlusCircle className="mr-2 h-4 w-4" /> إضافة إعلان جديد
               </Link>
             </Button>
           </CardContent>
@@ -113,9 +120,9 @@ export default function StoreDashboard() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Ad Views Overview</CardTitle>
+          <CardTitle>نظرة عامة على مشاهدات الإعلانات</CardTitle>
           <CardDescription>
-            An overview of your ad views in the last 6 months.
+            نظرة عامة على مشاهدات إعلاناتك في آخر 6 أشهر.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -157,21 +164,21 @@ export default function StoreDashboard() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Recent Ads</CardTitle>
-          <CardDescription>A list of your most recent ads.</CardDescription>
+          <CardTitle>الإعلانات الأخيرة</CardTitle>
+          <CardDescription>قائمة بأحدث إعلاناتك.</CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Title</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="hidden md:table-cell">Price</TableHead>
+                <TableHead>العنوان</TableHead>
+                <TableHead>الحالة</TableHead>
+                <TableHead className="hidden md:table-cell">السعر</TableHead>
                 <TableHead className="hidden md:table-cell">
-                  Created At
+                  تاريخ الإنشاء
                 </TableHead>
                 <TableHead>
-                  <span className="sr-only">Actions</span>
+                  <span className="sr-only">الإجراءات</span>
                 </TableHead>
               </TableRow>
             </TableHeader>
@@ -181,7 +188,7 @@ export default function StoreDashboard() {
                   <TableCell className="font-medium">{deal.title}</TableCell>
                   <TableCell>
                     <Badge variant={statusVariant[deal.status]}>
-                      {deal.status}
+                      {statusTranslations[deal.status]}
                     </Badge>
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
@@ -192,7 +199,7 @@ export default function StoreDashboard() {
                   </TableCell>
                   <TableCell>
                     <Button size="sm" variant="outline">
-                      View
+                      عرض
                     </Button>
                   </TableCell>
                 </TableRow>

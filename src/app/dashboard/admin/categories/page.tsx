@@ -32,14 +32,14 @@ export default function ManageCategoriesPage() {
       <CardHeader>
         <div className="flex justify-between items-start">
             <div>
-                 <CardTitle>Manage Categories</CardTitle>
+                 <CardTitle>إدارة الفئات</CardTitle>
                 <CardDescription>
-                Organize the types of deals available on the platform.
+                تنظيم أنواع الصفقات المتاحة على المنصة.
                 </CardDescription>
             </div>
             <Button>
                 <PlusCircle className="mr-2 h-5 w-5" />
-                Add Category
+                إضافة فئة
             </Button>
         </div>
       </CardHeader>
@@ -47,12 +47,12 @@ export default function ManageCategoriesPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Category Name</TableHead>
+              <TableHead>اسم الفئة</TableHead>
               <TableHead className="hidden md:table-cell">
-                Number of Deals
+                عدد الصفقات
               </TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">الإجراءات</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -73,14 +73,14 @@ export default function ManageCategoriesPage() {
                           variant="ghost"
                         >
                           <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">Toggle menu</span>
+                          <span className="sr-only">فتح القائمة</span>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
+                        <DropdownMenuLabel>الإجراءات</DropdownMenuLabel>
+                        <DropdownMenuItem>تعديل</DropdownMenuItem>
                         <DropdownMenuItem className="text-destructive">
-                          Delete
+                          حذف
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>

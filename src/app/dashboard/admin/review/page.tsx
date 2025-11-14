@@ -33,9 +33,9 @@ export default function AdReviewPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Ad Review</CardTitle>
+        <CardTitle>مراجعة الإعلانات</CardTitle>
         <CardDescription>
-          Review and approve or reject ads submitted by store owners.
+          مراجعة وقبول أو رفض الإعلانات المقدمة من أصحاب المتاجر.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -43,13 +43,13 @@ export default function AdReviewPage() {
           <TableHeader>
             <TableRow>
               <TableHead className="hidden w-[100px] sm:table-cell">
-                <span className="sr-only">Image</span>
+                <span className="sr-only">صورة</span>
               </TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead>Store</TableHead>
-              <TableHead className="hidden md:table-cell">Price</TableHead>
+              <TableHead>العنوان</TableHead>
+              <TableHead>المتجر</TableHead>
+              <TableHead className="hidden md:table-cell">السعر</TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">الإجراءات</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -80,15 +80,15 @@ export default function AdReviewPage() {
                   <TableCell>
                     <div className="flex gap-2 justify-end">
                       <Button variant="outline" size="sm">
-                        View
+                        عرض
                       </Button>
                       <Button variant="outline" size="icon" className="h-8 w-8 bg-green-500/10 text-green-600 hover:bg-green-500/20 hover:text-green-700">
                         <Check className="h-4 w-4" />
-                        <span className="sr-only">Approve</span>
+                        <span className="sr-only">موافقة</span>
                       </Button>
                       <Button variant="outline" size="icon" className="h-8 w-8 bg-red-500/10 text-red-600 hover:bg-red-500/20 hover:text-red-700">
                         <X className="h-4 w-4" />
-                         <span className="sr-only">Reject</span>
+                         <span className="sr-only">رفض</span>
                       </Button>
                     </div>
                   </TableCell>
@@ -98,7 +98,7 @@ export default function AdReviewPage() {
              {pendingDeals.length === 0 && (
                 <TableRow>
                     <TableCell colSpan={5} className="text-center">
-                        No pending ads to review.
+                        لا توجد إعلانات معلقة للمراجعة.
                     </TableCell>
                 </TableRow>
             )}

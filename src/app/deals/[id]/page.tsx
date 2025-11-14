@@ -60,7 +60,7 @@ export default function DealDetailsPage({ params }: { params: { id: string } }) 
                   <h3 className="font-semibold text-lg">{deal.storeName}</h3>
                   <div className="flex items-center gap-2 text-muted-foreground text-sm mt-1">
                     <MapPin className="h-4 w-4" />
-                    <span>Khurmah, Main Street</span>
+                    <span>الخرمة، الشارع العام</span>
                   </div>
                    <div className="flex items-center gap-2 text-muted-foreground text-sm mt-1">
                     <Phone className="h-4 w-4" />
@@ -70,8 +70,8 @@ export default function DealDetailsPage({ params }: { params: { id: string } }) 
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="flex-1"><ShoppingBag className="mr-2 h-5 w-5" /> Get This Deal</Button>
-                <Button size="lg" variant="outline" className="flex-1">Contact Store</Button>
+                <Button size="lg" className="flex-1"><ShoppingBag className="mr-2 h-5 w-5" /> الحصول على العرض</Button>
+                <Button size="lg" variant="outline" className="flex-1">اتصل بالمتجر</Button>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function DealDetailsPage({ params }: { params: { id: string } }) 
         <section className="bg-secondary/50 py-12">
             <div className="container mx-auto px-4">
                  <h2 className="text-2xl md:text-3xl font-headline font-semibold mb-6">
-                    Related Deals
+                    عروض ذات صلة
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {relatedDeals.map((relatedDeal) => (

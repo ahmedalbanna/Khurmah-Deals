@@ -29,40 +29,40 @@ export default function AddNewAdPage() {
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
-              <CardTitle>Create New Ad</CardTitle>
+              <CardTitle>إنشاء إعلان جديد</CardTitle>
               <CardDescription>
-                Fill in the details of your new deal below.
+                املأ تفاصيل صفقتك الجديدة أدناه.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="title">Ad Title</Label>
-                <Input id="title" placeholder="e.g., 50% Off All T-Shirts" />
+                <Label htmlFor="title">عنوان الإعلان</Label>
+                <Input id="title" placeholder="مثال: خصم 50% على جميع القمصان" />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="description">Description</Label>
+                <Label htmlFor="description">الوصف</Label>
                 <Textarea
                   id="description"
-                  placeholder="Describe your deal in detail."
+                  placeholder="صف صفقتك بالتفصيل."
                   rows={4}
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="price">Price (after discount)</Label>
-                  <Input id="price" placeholder="e.g., SAR 50" />
+                  <Label htmlFor="price">السعر (بعد الخصم)</Label>
+                  <Input id="price" placeholder="مثال: 50 ريال" />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="discount">Discount</Label>
-                  <Input id="discount" placeholder="e.g., 50% OFF" />
+                  <Label htmlFor="discount">الخصم</Label>
+                  <Input id="discount" placeholder="مثال: 50% خصم" />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="category">Category</Label>
+                  <Label htmlFor="category">الفئة</Label>
                   <Select>
                     <SelectTrigger id="category">
-                      <SelectValue placeholder="Select a category" />
+                      <SelectValue placeholder="اختر فئة" />
                     </SelectTrigger>
                     <SelectContent>
                       {categories.map((category) => (
@@ -74,14 +74,14 @@ export default function AddNewAdPage() {
                   </Select>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="image">Upload Image</Label>
+                  <Label htmlFor="image">تحميل صورة</Label>
                   <Input id="image" type="file" />
                 </div>
               </div>
             </CardContent>
             <CardFooter className="justify-end gap-2">
-              <Button variant="outline">Save as Draft</Button>
-              <Button>Submit for Review</Button>
+              <Button variant="outline">حفظ كمسودة</Button>
+              <Button>إرسال للمراجعة</Button>
             </CardFooter>
           </Card>
         </div>

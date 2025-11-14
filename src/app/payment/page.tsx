@@ -21,53 +21,53 @@ export default function PaymentPage() {
         <div className="container mx-auto px-4 py-12 flex items-center justify-center">
           <Card className="w-full max-w-lg">
             <CardHeader>
-              <CardTitle>Complete Your Payment</CardTitle>
+              <CardTitle>أكمل عملية الدفع</CardTitle>
               <CardDescription>
-                Securely pay for your ad submission.
+                ادفع بأمان لإرسال إعلانك.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-6">
               <div className="p-4 rounded-lg bg-secondary/50 border border-secondary">
                  <div className="flex justify-between items-center">
-                    <span className="font-medium">Standard Ad Post</span>
-                    <span className="font-bold">SAR 25.00</span>
+                    <span className="font-medium">نشر إعلان قياسي</span>
+                    <span className="font-bold">25.00 ريال</span>
                  </div>
-                 <p className="text-sm text-muted-foreground mt-1">Valid for 30 days</p>
+                 <p className="text-sm text-muted-foreground mt-1">صالح لمدة 30 يومًا</p>
               </div>
 
               <div className="grid gap-2">
-                <Label htmlFor="card-number">Card Number</Label>
+                <Label htmlFor="card-number">رقم البطاقة</Label>
                 <div className="relative">
-                  <Input id="card-number" placeholder="0000 0000 0000 0000" />
+                  <Input id="card-number" placeholder="0000 0000 0000 0000" dir="ltr" />
                   <CreditCard className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="expiry-date">Expiry</Label>
-                  <Input id="expiry-date" placeholder="MM/YY" />
+                  <Label htmlFor="expiry-date">انتهاء الصلاحية</Label>
+                  <Input id="expiry-date" placeholder="MM/YY" dir="ltr" />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="cvc">CVC</Label>
-                  <Input id="cvc" placeholder="123" />
+                  <Input id="cvc" placeholder="123" dir="ltr" />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="zip">ZIP</Label>
-                  <Input id="zip" placeholder="12345" />
+                  <Label htmlFor="zip">الرمز البريدي</Label>
+                  <Input id="zip" placeholder="12345" dir="ltr" />
                 </div>
               </div>
               <div className="grid gap-2">
-                  <Label htmlFor="name">Name on Card</Label>
-                  <Input id="name" placeholder="John Doe" />
+                  <Label htmlFor="name">الاسم على البطاقة</Label>
+                  <Input id="name" placeholder="فلان الفلاني" />
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
               <Button className="w-full" size="lg">
                 <Lock className="mr-2 h-4 w-4" />
-                Pay SAR 25.00
+                ادفع 25.00 ريال
               </Button>
               <p className="text-xs text-muted-foreground text-center">
-                Your payment is secure and encrypted.
+                دفعك آمن ومشفّر.
               </p>
             </CardFooter>
           </Card>

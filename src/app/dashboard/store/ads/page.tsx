@@ -39,20 +39,26 @@ export default function ManageAdsPage() {
     rejected: 'destructive',
   } as const;
 
+  const statusTranslations = {
+    approved: 'مقبول',
+    pending: 'قيد المراجعة',
+    rejected: 'مرفوض',
+  };
+
   return (
     <Card>
       <CardHeader>
         <div className="flex justify-between items-start">
             <div>
-                <CardTitle>Manage Ads</CardTitle>
+                <CardTitle>إدارة الإعلانات</CardTitle>
                 <CardDescription>
-                A list of all ads you have created.
+                قائمة بجميع الإعلانات التي قمت بإنشائها.
                 </CardDescription>
             </div>
             <Button asChild>
                 <Link href="/dashboard/store/ads/new">
                     <PlusCircle className="mr-2 h-5 w-5" />
-                    Add New Ad
+                    إضافة إعلان جديد
                 </Link>
             </Button>
         </div>
@@ -62,16 +68,16 @@ export default function ManageAdsPage() {
           <TableHeader>
             <TableRow>
               <TableHead className="hidden w-[100px] sm:table-cell">
-                <span className="sr-only">Image</span>
+                <span className="sr-only">صورة</span>
               </TableHead>
-              <TableHead>Title</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead className="hidden md:table-cell">Price</TableHead>
+              <TableHead>العنوان</TableHead>
+              <TableHead>الحالة</TableHead>
+              <TableHead className="hidden md:table-cell">السعر</TableHead>
               <TableHead className="hidden md:table-cell">
-                Created at
+                تاريخ الإنشاء
               </TableHead>
               <TableHead>
-                <span className="sr-only">Actions</span>
+                <span className="sr-only">الإجراءات</span>
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -97,7 +103,7 @@ export default function ManageAdsPage() {
                   <TableCell className="font-medium">{deal.title}</TableCell>
                   <TableCell>
                     <Badge variant={statusVariant[deal.status]}>
-                      {deal.status}
+                      {statusTranslations[deal.status]}
                     </Badge>
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
@@ -115,14 +121,14 @@ export default function ManageAdsPage() {
                           variant="ghost"
                         >
                           <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">Toggle menu</span>
+                          <span className="sr-only">فتح القائمة</span>
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
-                        <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
+                        <DropdownMenuLabel>الإجراءات</DropdownMenuLabel>
+                        <DropdownMenuItem>تعديل</DropdownMenuItem>
                         <DropdownMenuItem className="text-destructive">
-                          Delete
+                          حذف
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>

@@ -13,6 +13,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { generateAdCopy } from '@/ai/ai-ad-suggester';
 
 export function AiAdSuggester() {
   const [idea, setIdea] = useState('');
@@ -24,23 +25,21 @@ export function AiAdSuggester() {
     if (!idea.trim()) {
       toast({
         variant: 'destructive',
-        title: 'Input required',
-        description: 'Please enter a product or deal idea.',
+        title: 'الإدخال مطلوب',
+        description: 'الرجاء إدخال فكرة منتج أو صفقة.',
       });
       return;
     }
     setIsLoading(true);
     setSuggestion('');
     try {
-      // Mock AI call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      const generatedText = `🔥 Unbeatable Deal! 🔥 Get the best ${idea} in town, now with an exclusive discount! Perfect for [target audience], our ${idea} offers [key benefit 1] and [key benefit 2]. Limited time offer, visit us today at [Your Store Name] and don't miss out! #KhurmahDeals #${idea.split(' ')[0]}`;
-      setSuggestion(generatedText);
+      const result = await generateAdCopy({ productDescription: idea });
+      setSuggestion(result.adCopy);
     } catch (error) {
       toast({
         variant: 'destructive',
-        title: 'Error',
-        description: 'Failed to generate suggestion. Please try again.',
+        title: 'خطأ',
+        description: 'فشل في إنشاء الاقتراح. الرجاء معاودة المحاولة.',
       });
     } finally {
       setIsLoading(false);
@@ -51,8 +50,8 @@ export function AiAdSuggester() {
     if (!suggestion) return;
     navigator.clipboard.writeText(suggestion);
     toast({
-        title: 'Copied!',
-        description: 'Ad suggestion copied to clipboard.'
+        title: 'تم النسخ!',
+        description: 'تم نسخ اقتراح الإعلان إلى الحافظة.'
     })
   }
 
@@ -61,18 +60,18 @@ export function AiAdSuggester() {
       <CardHeader>
         <div className="flex items-center gap-2">
           <Wand2 className="h-6 w-6 text-primary" />
-          <CardTitle>AI Ad Suggester</CardTitle>
+          <CardTitle>مقترح إعلانات الذكاء الاصطناعي</CardTitle>
         </div>
         <CardDescription>
-          Craft the perfect ad copy. Just enter a basic idea.
+          اصنع نسخة الإعلان المثالية. فقط أدخل فكرة أساسية.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="idea">Product or Deal Idea</Label>
+          <Label htmlFor="idea">فكرة المنتج أو الصفقة</Label>
           <Textarea
             id="idea"
-            placeholder="e.g., fresh bread, weekend car wash"
+            placeholder="مثال: خبز طازج، غسيل سيارات في عطلة نهاية الأسبوع"
             value={idea}
             onChange={(e) => setIdea(e.target.value)}
           />
@@ -83,13 +82,13 @@ export function AiAdSuggester() {
           ) : (
             <Wand2 className="mr-2 h-4 w-4" />
           )}
-          Generate Suggestion
+          إنشاء اقتراح
         </Button>
         {suggestion && (
           <div className="grid gap-2 relative rounded-md border bg-muted/50 p-4">
-            <Label>Suggestion</Label>
+            <Label>الاقتراح</Label>
             <p className="text-sm text-foreground">{suggestion}</p>
-             <Button onClick={handleCopyToClipboard} variant="outline" size="sm" className="mt-2 w-fit">Copy Text</Button>
+             <Button onClick={handleCopyToClipboard} variant="outline" size="sm" className="mt-2 w-fit">نسخ النص</Button>
           </div>
         )}
       </CardContent>

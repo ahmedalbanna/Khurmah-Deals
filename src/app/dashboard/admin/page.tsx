@@ -23,17 +23,17 @@ import {
 import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts';
 
 const chartData = [
-  { month: 'January', desktop: 186 },
-  { month: 'February', desktop: 305 },
-  { month: 'March', desktop: 237 },
-  { month: 'April', desktop: 73 },
-  { month: 'May', desktop: 209 },
-  { month: 'June', desktop: 214 },
+  { month: 'يناير', desktop: 186 },
+  { month: 'فبراير', desktop: 305 },
+  { month: 'مارس', desktop: 237 },
+  { month: 'أبريل', desktop: 73 },
+  { month: 'مايو', desktop: 209 },
+  { month: 'يونيو', desktop: 214 },
 ];
 
 const chartConfig = {
   desktop: {
-    label: 'Ads',
+    label: 'الإعلانات',
     color: 'hsl(var(--primary))',
   },
 };
@@ -44,49 +44,49 @@ export default function AdminDashboard() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
+            <CardTitle className="text-sm font-medium">إجمالي الإيرادات</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">SAR 4,231.89</div>
+            <div className="text-2xl font-bold">4,231.89 ريال</div>
             <p className="text-xs text-muted-foreground">
-              +20.1% from last month
+              +20.1% عن الشهر الماضي
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Users</CardTitle>
+            <CardTitle className="text-sm font-medium">إجمالي المستخدمين</CardTitle>
             <Users className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+2350</div>
             <p className="text-xs text-muted-foreground">
-              +180.1% from last month
+              +180.1% عن الشهر الماضي
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Ads</CardTitle>
+            <CardTitle className="text-sm font-medium">الإعلانات النشطة</CardTitle>
             <Activity className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+573</div>
             <p className="text-xs text-muted-foreground">
-              +19% from last month
+              +19% عن الشهر الماضي
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Pending Review</CardTitle>
+            <CardTitle className="text-sm font-medium">قيد المراجعة</CardTitle>
             <CheckCheck className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">+12</div>
             <p className="text-xs text-muted-foreground">
-              +2 since last hour
+              +2 منذ الساعة الماضية
             </p>
           </CardContent>
         </Card>
@@ -94,9 +94,9 @@ export default function AdminDashboard() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Ads Overview</CardTitle>
+          <CardTitle>نظرة عامة على الإعلانات</CardTitle>
           <CardDescription>
-            An overview of ads posted in the last 6 months.
+            نظرة عامة على الإعلانات المنشورة في آخر 6 أشهر.
           </CardDescription>
         </CardHeader>
         <CardContent>

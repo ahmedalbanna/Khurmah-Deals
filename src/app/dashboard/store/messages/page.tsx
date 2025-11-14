@@ -6,15 +6,15 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const conversations = [
-  { id: 1, name: 'Ahmed Al-Malki', message: 'Is the laptop still available?', time: '2:45 PM', avatarId: 'user-avatar-1' },
-  { id: 2, name: 'Noura Abdullah', message: 'What sizes do you have?', time: '1:30 PM', avatarId: 'user-avatar-3' },
-  { id: 3, name: 'Khalid Fahad', message: 'Thank you!', time: 'Yesterday', avatarId: 'user-avatar-2' },
+  { id: 1, name: 'أحمد المالكي', message: 'هل الكمبيوتر المحمول لا يزال متوفراً؟', time: '2:45 PM', avatarId: 'user-avatar-1' },
+  { id: 2, name: 'نورة عبدالله', message: 'ما هي الأحجام المتوفرة لديكم؟', time: '1:30 PM', avatarId: 'user-avatar-3' },
+  { id: 3, name: 'خالد فهد', message: 'شكراً لك!', time: 'أمس', avatarId: 'user-avatar-2' },
 ];
 
 const messages = [
-    { sender: 'other', text: 'Is the laptop still available?', time: '2:45 PM' },
-    { sender: 'me', text: 'Yes, it is! We have a few units left.', time: '2:46 PM' },
-    { sender: 'other', text: 'Great, can I reserve one?', time: '2:47 PM' },
+    { sender: 'other', text: 'هل الكمبيوتر المحمول لا يزال متوفراً؟', time: '2:45 PM' },
+    { sender: 'me', text: 'نعم، هو كذلك! لدينا بضع وحدات متبقية.', time: '2:46 PM' },
+    { sender: 'other', text: 'رائع، هل يمكنني حجز واحد؟', time: '2:47 PM' },
 ];
 
 export default function MessagesPage() {
@@ -22,10 +22,10 @@ export default function MessagesPage() {
     <div className="h-[calc(100vh-120px)] grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div className="md:col-span-1 lg:col-span-1 flex flex-col border rounded-lg">
         <div className="p-4 border-b">
-          <h2 className="text-xl font-bold">Messages</h2>
+          <h2 className="text-xl font-bold">الرسائل</h2>
           <div className="relative mt-4">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search messages" className="pl-9" />
+            <Input placeholder="البحث في الرسائل" className="pl-9" />
           </div>
         </div>
         <ScrollArea className="flex-1">
@@ -53,10 +53,10 @@ export default function MessagesPage() {
       <div className="md:col-span-2 lg:col-span-3 flex flex-col border rounded-lg h-full">
         <div className="flex items-center gap-4 p-4 border-b">
           <Avatar>
-            <AvatarImage src={PlaceHolderImages.find(i => i.id === 'user-avatar-1')?.imageUrl} alt="Ahmed Al-Malki" />
-            <AvatarFallback>A</AvatarFallback>
+            <AvatarImage src={PlaceHolderImages.find(i => i.id === 'user-avatar-1')?.imageUrl} alt="أحمد المالكي" />
+            <AvatarFallback>أ</AvatarFallback>
           </Avatar>
-          <h3 className="font-semibold">Ahmed Al-Malki</h3>
+          <h3 className="font-semibold">أحمد المالكي</h3>
         </div>
         <ScrollArea className="flex-1 p-4 bg-muted/20">
             <div className="space-y-4">
@@ -73,7 +73,7 @@ export default function MessagesPage() {
         </ScrollArea>
         <div className="p-4 border-t bg-card">
           <div className="relative">
-            <Input placeholder="Type a message..." className="pr-12" />
+            <Input placeholder="اكتب رسالة..." className="pr-12" />
             <Button size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8">
               <Send className="h-4 w-4" />
             </Button>
