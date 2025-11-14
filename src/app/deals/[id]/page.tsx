@@ -45,7 +45,7 @@ export default function DealDetailsPage({ params }: { params: { id: string } }) 
               <Badge variant="secondary" className="mb-2">{deal.category}</Badge>
               <h1 className="font-headline text-3xl md:text-4xl font-bold mb-2">{deal.title}</h1>
               <div className="flex items-center gap-4 mb-4">
-                 <p className="text-3xl font-bold text-primary">{deal.price}</p>
+                 <p className="text-3xl font-bold text-accent">{deal.price}</p>
                  <Badge variant="destructive" className="text-lg">{deal.discount}</Badge>
               </div>
               <p className="text-muted-foreground leading-relaxed">{deal.description}</p>

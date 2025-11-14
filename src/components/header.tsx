@@ -32,8 +32,8 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <Package className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg">أوفرلي</span>
+            <Package className="h-6 w-6 text-accent" />
+            <span className="font-bold font-headline text-lg">خرمة ديلز</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {navLinks.map((link) => (
@@ -70,8 +70,8 @@ export function Header() {
                   href="/"
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
-                  <Package className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline">أوفرلي</span>
+                  <Package className="h-6 w-6 text-accent" />
+                  <span className="font-bold font-headline">خرمة ديلز</span>
                 </Link>
                 {navLinks.map((link) => (
                   <Link

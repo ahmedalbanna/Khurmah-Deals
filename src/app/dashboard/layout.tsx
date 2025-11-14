@@ -56,9 +56,9 @@ export default function DashboardLayout({
       <Sidebar side="right">
         <SidebarHeader>
           <Link href="/" className="flex items-center gap-2">
-            <Package className="h-6 w-6 text-primary" />
+            <Package className="h-6 w-6 text-accent" />
             <span className="font-bold font-headline text-lg group-data-[collapsible=icon]:hidden">
-              أوفرلي
+              خرمة ديلز
             </span>
           </Link>
         </SidebarHeader>

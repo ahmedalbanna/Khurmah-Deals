@@ -59,7 +59,7 @@ export function AiAdSuggester() {
     <Card className="sticky top-24">
       <CardHeader>
         <div className="flex items-center gap-2">
-          <Wand2 className="h-6 w-6 text-primary" />
+          <Wand2 className="h-6 w-6 text-accent" />
           <CardTitle>مقترح إعلانات الذكاء الاصطناعي</CardTitle>
         </div>
         <CardDescription>

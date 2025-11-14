@@ -30,7 +30,7 @@ export default function PaymentPage() {
               <div className="p-4 rounded-lg bg-secondary/50 border border-secondary">
                  <div className="flex justify-between items-center">
                     <span className="font-medium">نشر إعلان قياسي</span>
-                    <span className="font-bold">25.00 ريال</span>
+                    <span className="font-bold text-accent">25.00 ريال</span>
                  </div>
                  <p className="text-sm text-muted-foreground mt-1">صالح لمدة 30 يومًا</p>
               </div>

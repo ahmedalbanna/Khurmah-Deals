@@ -34,7 +34,7 @@ const chartData = [
 const chartConfig = {
   desktop: {
     label: 'الإعلانات',
-    color: 'hsl(var(--primary))',
+    color: 'hsl(var(--accent))',
   },
 };
 

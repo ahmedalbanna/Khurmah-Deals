@@ -43,7 +43,7 @@ export default function Home() {
               priority
             />
           )}
-          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-primary-foreground p-4">
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white p-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4">
               سوقك المحلي للصفقات
             </h1>

@@ -46,7 +46,7 @@ const chartData = [
 const chartConfig = {
   views: {
     label: 'المشاهدات',
-    color: 'hsl(var(--primary))',
+    color: 'hsl(var(--accent))',
   },
 };
 
@@ -101,10 +101,10 @@ export default function StoreDashboard() {
             <p className="text-xs text-muted-foreground">من 10 متاحة</p>
           </CardContent>
         </Card>
-        <Card className="bg-primary text-primary-foreground">
+        <Card className="bg-accent text-accent-foreground">
           <CardHeader className="pb-2">
             <CardTitle>إنشاء إعلان جديد</CardTitle>
-            <CardDescription className="text-primary-foreground/80">
+            <CardDescription className="text-accent-foreground/80">
               احصل على المزيد من العملاء عن طريق نشر صفقة جديدة.
             </CardDescription>
           </CardHeader>

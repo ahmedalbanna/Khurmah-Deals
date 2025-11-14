@@ -8,8 +8,8 @@ export default function RegisterPage() {
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
         <div className="flex flex-col space-y-2 text-center">
             <Link href="/" className="flex items-center justify-center gap-2 mb-4">
-                <Package className="h-8 w-8 text-primary" />
-                <span className="font-bold font-headline text-2xl">أوفرلي</span>
+                <Package className="h-8 w-8 text-accent" />
+                <span className="font-bold font-headline text-2xl">خرمة ديلز</span>
             </Link>
           <h1 className="text-2xl font-semibold tracking-tight">
             إنشاء حساب

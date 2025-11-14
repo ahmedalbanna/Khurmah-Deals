@@ -33,8 +33,8 @@ export function DealCard({ deal }: DealCardProps) {
               />
             )}
             <Badge
-              variant="secondary"
-              className="absolute top-2 right-2 bg-primary/80 text-primary-foreground backdrop-blur-sm"
+              variant="destructive"
+              className="absolute top-2 right-2"
             >
               {deal.discount}
             </Badge>
@@ -51,7 +51,7 @@ export function DealCard({ deal }: DealCardProps) {
         <p className="text-muted-foreground text-sm mt-1">{deal.storeName}</p>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex justify-between items-center">
-        <p className="text-xl font-bold text-primary">{deal.price}</p>
+        <p className="text-xl font-bold text-accent">{deal.price}</p>
         <Button asChild variant="outline">
           <Link href={`/deals/${deal.id}`}>عرض الصفقة</Link>
         </Button>
