@@ -1,3 +1,82 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A bustling local marketplace street",
+      "imageUrl": "https://images.unsplash.com/photo-1674906285949-bcb39dd53f97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZSUyMHN0cmVldHxlbnwwfHx8fDE3NjMxNDY2MDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marketplace street"
+    },
+    {
+      "id": "deal-1",
+      "description": "Modern electronics on display",
+      "imageUrl": "https://images.unsplash.com/photo-1636614223954-db6a663293ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlbGVjdHJvbmljcyUyMGRpc3BsYXl8ZW58MHx8fHwxNzYzMTQ2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "electronics display"
+    },
+    {
+      "id": "deal-2",
+      "description": "Fashionable clothing on racks",
+      "imageUrl": "https://images.unsplash.com/photo-1614990354198-b06764dcb13c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbG90aGluZyUyMHJhY2t8ZW58MHx8fHwxNzYzMDk4MDQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clothing rack"
+    },
+    {
+      "id": "deal-3",
+      "description": "A delicious gourmet meal",
+      "imageUrl": "https://images.unsplash.com/photo-1757358961768-721e850416ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnb3VybWV0JTIwbWVhbHxlbnwwfHx8fDE3NjMwMjk3MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gourmet meal"
+    },
+    {
+      "id": "deal-4",
+      "description": "Cozy home decor items",
+      "imageUrl": "https://images.unsplash.com/photo-1618220179428-22790b461013?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob21lJTIwZGVjb3J8ZW58MHx8fHwxNzYzMTQ2NjA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "home decor"
+    },
+    {
+      "id": "deal-5",
+      "description": "Fresh produce at a grocery store",
+      "imageUrl": "https://images.unsplash.com/photo-1592558480962-903b06077406?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZnJlc2glMjBwcm9kdWNlfGVufDB8fHx8MTc2MzE0NjYwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fresh produce"
+    },
+    {
+      "id": "deal-6",
+      "description": "A person getting a haircut at a salon",
+      "imageUrl": "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYWlyJTIwc2Fsb258ZW58MHx8fHwxNzYzMDMzNTI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hair salon"
+    },
+    {
+      "id": "deal-7",
+      "description": "Automotive parts on a shelf",
+      "imageUrl": "https://images.unsplash.com/photo-1759419281419-b04552b2691a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhdXRvbW90aXZlJTIwcGFydHN8ZW58MHx8fHwxNzYzMTQ2NjEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "automotive parts"
+    },
+    {
+      "id": "deal-8",
+      "description": "Sports equipment in a store",
+      "imageUrl": "https://images.unsplash.com/photo-1567113379515-6e85e7168eb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzcG9ydHMlMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzYzMDc2OTkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sports equipment"
+    },
+    {
+      "id": "deal-detail",
+      "description": "Detailed shot of a high-end watch",
+      "imageUrl": "https://images.unsplash.com/photo-1580287017488-706e4d7598a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3YXRjaCUyMGRldGFpbHxlbnwwfHx8fDE3NjMxNDY2MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "watch detail"
+    },
+    {
+      "id": "user-avatar-1",
+      "description": "Profile picture of a user",
+      "imageUrl": "https://images.unsplash.com/photo-1521119989659-a83eee488004?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMxNDEzMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "user-avatar-2",
+      "description": "Profile picture of another user",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjMxNDEzMjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "user-avatar-3",
+      "description": "Profile picture of a third user",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MzEwMjI2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    }
+  ]
 }
