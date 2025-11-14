@@ -18,10 +18,10 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const navLinks = [
-  { href: '/', label: 'Deals' },
-  { href: '/dashboard/store', label: 'For Business' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'الصفقات' },
+  { href: '/dashboard/store', label: 'للأعمال' },
+  { href: '#pricing', label: 'الأسعار' },
+  { href: '#contact', label: 'تواصل معنا' },
 ];
 
 export function Header() {
@@ -33,7 +33,7 @@ export function Header() {
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
             <Package className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg">Overly</span>
+            <span className="font-bold font-headline text-lg">أوفرلي</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {navLinks.map((link) => (
@@ -53,7 +53,7 @@ export function Header() {
               <UserMenu />
             ) : (
               <Button asChild>
-                <Link href="/login">Login / Sign Up</Link>
+                <Link href="/login">تسجيل الدخول / إنشاء حساب</Link>
               </Button>
             )}
           </div>
@@ -71,7 +71,7 @@ export function Header() {
                   className="flex items-center gap-2 text-lg font-semibold"
                 >
                   <Package className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline">Overly</span>
+                  <span className="font-bold font-headline">أوفرلي</span>
                 </Link>
                 {navLinks.map((link) => (
                   <Link
@@ -89,7 +89,7 @@ export function Header() {
                  
                 ) : (
                   <Button asChild className="mt-4">
-                    <Link href="/login">Login / Sign Up</Link>
+                    <Link href="/login">تسجيل الدخول / إنشاء حساب</Link>
                   </Button>
                 )}
               </nav>
@@ -112,16 +112,16 @@ const UserMenu = () => (
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
-      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuLabel>حسابي</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuItem asChild>
-        <Link href="/dashboard/store">Dashboard</Link>
+        <Link href="/dashboard/store">لوحة التحكم</Link>
       </DropdownMenuItem>
       <DropdownMenuItem asChild>
-        <Link href="#">Settings</Link>
+        <Link href="#">الإعدادات</Link>
       </DropdownMenuItem>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>Logout</DropdownMenuItem>
+      <DropdownMenuItem>تسجيل الخروج</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 )

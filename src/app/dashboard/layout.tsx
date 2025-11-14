@@ -28,18 +28,18 @@ import {
 import { DashboardHeader } from '@/components/dashboard-header';
 
 const adminNav = [
-  { href: '/dashboard/admin', label: 'Overview', icon: Home },
-  { href: '/dashboard/admin/review', label: 'Ad Review', icon: CheckCheck },
-  { href: '/dashboard/admin/users', label: 'Manage Users', icon: Users },
-  { href: '/dashboard/admin/categories', label: 'Manage Categories', icon: Tag },
+  { href: '/dashboard/admin', label: 'نظرة عامة', icon: Home },
+  { href: '/dashboard/admin/review', label: 'مراجعة الإعلانات', icon: CheckCheck },
+  { href: '/dashboard/admin/users', label: 'إدارة المستخدمين', icon: Users },
+  { href: '/dashboard/admin/categories', label: 'إدارة الفئات', icon: Tag },
 ];
 
 const storeNav = [
-  { href: '/dashboard/store', label: 'Overview', icon: Home },
-  { href: '/dashboard/store/ads', label: 'Manage Ads', icon: Store },
-  { href: '/dashboard/store/ads/new', label: 'Add New Ad', icon: PlusCircle },
-  { href: '/dashboard/store/messages', label: 'Messages', icon: MessageSquare },
-  { href: '#', label: 'Performance', icon: BarChart2 },
+  { href: '/dashboard/store', label: 'نظرة عامة', icon: Home },
+  { href: '/dashboard/store/ads', label: 'إدارة الإعلانات', icon: Store },
+  { href: '/dashboard/store/ads/new', label: 'إضافة إعلان جديد', icon: PlusCircle },
+  { href: '/dashboard/store/messages', label: 'الرسائل', icon: MessageSquare },
+  { href: '#', label: 'الأداء', icon: BarChart2 },
 ];
 
 export default function DashboardLayout({
@@ -53,12 +53,12 @@ export default function DashboardLayout({
 
   return (
     <SidebarProvider>
-      <Sidebar>
+      <Sidebar side="right">
         <SidebarHeader>
           <Link href="/" className="flex items-center gap-2">
             <Package className="h-6 w-6 text-primary" />
             <span className="font-bold font-headline text-lg group-data-[collapsible=icon]:hidden">
-              Overly
+              أوفرلي
             </span>
           </Link>
         </SidebarHeader>
@@ -83,16 +83,16 @@ export default function DashboardLayout({
         <SidebarFooter>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton tooltip={{children: 'Settings'}}>
+              <SidebarMenuButton tooltip={{children: 'الإعدادات'}}>
                 <Settings />
-                <span>Settings</span>
+                <span>الإعدادات</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip={{children: 'Logout'}}>
+              <SidebarMenuButton asChild tooltip={{children: 'تسجيل الخروج'}}>
                 <Link href="/">
                     <LogOut />
-                    <span>Logout</span>
+                    <span>تسجيل الخروج</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

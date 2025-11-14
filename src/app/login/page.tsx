@@ -9,13 +9,13 @@ export default function LoginPage() {
         <div className="flex flex-col space-y-2 text-center">
             <Link href="/" className="flex items-center justify-center gap-2 mb-4">
                 <Package className="h-8 w-8 text-primary" />
-                <span className="font-bold font-headline text-2xl">Overly</span>
+                <span className="font-bold font-headline text-2xl">أوفرلي</span>
             </Link>
           <h1 className="text-2xl font-semibold tracking-tight">
-            Welcome back
+            مرحباً بعودتك
           </h1>
           <p className="text-sm text-muted-foreground">
-            Enter your email and password to sign in to your account
+            أدخل بريدك الإلكتروني وكلمة المرور لتسجيل الدخول إلى حسابك
           </p>
         </div>
         <UserAuthForm mode="login" />
@@ -24,7 +24,7 @@ export default function LoginPage() {
             href="/register"
             className="underline underline-offset-4 hover:text-primary"
           >
-            Don't have an account? Sign Up
+            ليس لديك حساب؟ سجل الآن
           </Link>
         </p>
       </div>

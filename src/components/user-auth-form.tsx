@@ -18,16 +18,16 @@ interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const loginSchema = z.object({
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  password: z.string().min(1, { message: 'Password is required.' }),
+  email: z.string().email({ message: 'الرجاء إدخال عنوان بريد إلكتروني صالح.' }),
+  password: z.string().min(1, { message: 'كلمة المرور مطلوبة.' }),
 });
 
 const registerSchema = z.object({
-  fullName: z.string().min(3, { message: 'Full name must be at least 3 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  password: z.string().min(8, { message: 'Password must be at least 8 characters.' }),
+  fullName: z.string().min(3, { message: 'يجب أن يتكون الاسم الكامل من 3 أحرف على الأقل.' }),
+  email: z.string().email({ message: 'الرجاء إدخال عنوان بريد إلكتروني صالح.' }),
+  password: z.string().min(8, { message: 'يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.' }),
   accountType: z.enum(['customer', 'store_owner'], {
-    required_error: 'You need to select an account type.',
+    required_error: 'يجب عليك تحديد نوع الحساب.',
   }),
   storeName: z.string().optional(),
 }).refine(data => {
@@ -36,7 +36,7 @@ const registerSchema = z.object({
     }
     return true;
 }, {
-    message: "Store name is required for store owners.",
+    message: "اسم المتجر مطلوب لأصحاب المتاجر.",
     path: ["storeName"],
 });
 
@@ -54,6 +54,7 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
     handleSubmit,
     formState: { errors },
     watch,
+    setValue,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
@@ -77,8 +78,8 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
         }
     } else {
         toast({
-            title: "Account Created!",
-            description: "You have successfully signed up. Please log in.",
+            title: "تم إنشاء الحساب!",
+            description: "لقد قمت بالتسجيل بنجاح. الرجاء تسجيل الدخول.",
         })
         router.push('/login');
     }
@@ -89,11 +90,11 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-4">
           {mode === 'register' && (
-            <div className="grid gap-2">
-              <Label htmlFor="fullName">Full Name</Label>
+            <div className="grid gap-2 text-right">
+              <Label htmlFor="fullName">الاسم الكامل</Label>
               <Input
                 id="fullName"
-                placeholder="Your Name"
+                placeholder="اسمك"
                 type="text"
                 autoCapitalize="words"
                 autoCorrect="off"
@@ -103,8 +104,8 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
               {errors.fullName && <p className="text-sm text-destructive">{(errors.fullName as any).message}</p>}
             </div>
           )}
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+          <div className="grid gap-2 text-right">
+            <Label htmlFor="email">البريد الإلكتروني</Label>
             <Input
               id="email"
               placeholder="name@example.com"
@@ -113,47 +114,50 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
               autoComplete="email"
               autoCorrect="off"
               disabled={isLoading}
+              dir="ltr"
               {...register('email')}
             />
             {errors.email && <p className="text-sm text-destructive">{(errors.email as any).message}</p>}
           </div>
-          <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
+          <div className="grid gap-2 text-right">
+            <Label htmlFor="password">كلمة المرور</Label>
             <Input
               id="password"
               placeholder="••••••••"
               type="password"
               disabled={isLoading}
+              dir="ltr"
               {...register('password')}
             />
             {errors.password && <p className="text-sm text-destructive">{(errors.password as any).message}</p>}
           </div>
           {mode === 'register' && (
             <>
-              <div className="grid gap-2">
-                <Label>Account Type</Label>
+              <div className="grid gap-2 text-right">
+                <Label>نوع الحساب</Label>
                 <RadioGroup
                   defaultValue="customer"
                   className="flex gap-4"
-                  {...register('accountType')}
+                  dir="rtl"
+                  onValueChange={(value) => setValue('accountType', value as 'customer' | 'store_owner')}
                 >
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2 space-x-reverse">
                     <RadioGroupItem value="customer" id="r1" />
-                    <Label htmlFor="r1">Customer</Label>
+                    <Label htmlFor="r1">زبون</Label>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2 space-x-reverse">
                     <RadioGroupItem value="store_owner" id="r2" />
-                    <Label htmlFor="r2">Store Owner</Label>
+                    <Label htmlFor="r2">صاحب متجر</Label>
                   </div>
                 </RadioGroup>
                 {errors.accountType && <p className="text-sm text-destructive">{(errors.accountType as any).message}</p>}
               </div>
               {accountType === 'store_owner' && (
-                 <div className="grid gap-2">
-                    <Label htmlFor="storeName">Store Name</Label>
+                 <div className="grid gap-2 text-right">
+                    <Label htmlFor="storeName">اسم المتجر</Label>
                     <Input
                         id="storeName"
-                        placeholder="My Awesome Store"
+                        placeholder="متجري الرائع"
                         type="text"
                         disabled={isLoading}
                         {...register('storeName')}
@@ -166,9 +170,9 @@ export function UserAuthForm({ className, mode, ...props }: UserAuthFormProps) {
 
           <Button disabled={isLoading} className="mt-2">
             {isLoading && (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Loader2 className="ml-2 h-4 w-4 animate-spin" />
             )}
-            {mode === 'login' ? 'Sign In' : 'Create Account'}
+            {mode === 'login' ? 'تسجيل الدخول' : 'إنشاء حساب'}
           </Button>
         </div>
       </form>

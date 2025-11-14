@@ -45,11 +45,10 @@ export default function Home() {
           )}
           <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-primary-foreground p-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4">
-              Your Local Marketplace for Deals
+              سوقك المحلي للصفقات
             </h1>
             <p className="text-lg md:text-2xl max-w-2xl">
-              Discover exclusive offers and discounts from local stores in Al
-              Khurmah.
+              اكتشف العروض والخصومات الحصرية من المتاجر المحلية في الخرمة.
             </p>
           </div>
         </section>
@@ -59,20 +58,20 @@ export default function Home() {
             <div className="bg-card p-4 rounded-lg shadow-md mb-8 -mt-24 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center">
                 <div className="relative md:col-span-2 lg:col-span-2">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                   <Input
-                    placeholder="What are you looking for?"
-                    className="pl-10"
+                    placeholder="عن ماذا تبحث؟"
+                    className="pr-10"
                   />
                 </div>
                 <div className="relative">
-                  <Tag className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Select defaultValue="all">
-                    <SelectTrigger className="pl-10">
-                      <SelectValue placeholder="All Categories" />
+                  <Tag className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Select defaultValue="all" dir='rtl'>
+                    <SelectTrigger className="pr-10">
+                      <SelectValue placeholder="جميع الفئات" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Categories</SelectItem>
+                      <SelectItem value="all">جميع الفئات</SelectItem>
                       {categories.map((category) => (
                         <SelectItem key={category.id} value={category.id}>
                           {category.name}
@@ -81,13 +80,13 @@ export default function Home() {
                     </SelectContent>
                   </Select>
                 </div>
-                <Button className="w-full">Search</Button>
+                <Button className="w-full">بحث</Button>
               </div>
             </div>
 
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl md:text-3xl font-headline font-semibold">
-                Today's Top Deals
+                أبرز عروض اليوم
               </h2>
               <div className="flex items-center gap-2">
                 <Button variant="ghost" size="icon">
@@ -106,7 +105,7 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button size="lg">Load More Deals</Button>
+              <Button size="lg">تحميل المزيد من العروض</Button>
             </div>
           </div>
         </section>

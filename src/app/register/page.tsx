@@ -9,30 +9,30 @@ export default function RegisterPage() {
         <div className="flex flex-col space-y-2 text-center">
             <Link href="/" className="flex items-center justify-center gap-2 mb-4">
                 <Package className="h-8 w-8 text-primary" />
-                <span className="font-bold font-headline text-2xl">Overly</span>
+                <span className="font-bold font-headline text-2xl">أوفرلي</span>
             </Link>
           <h1 className="text-2xl font-semibold tracking-tight">
-            Create an account
+            إنشاء حساب
           </h1>
           <p className="text-sm text-muted-foreground">
-            Enter your details below to create your account
+            أدخل التفاصيل الخاصة بك أدناه لإنشاء حسابك
           </p>
         </div>
         <UserAuthForm mode="register" />
         <p className="px-8 text-center text-sm text-muted-foreground">
-          By clicking continue, you agree to our{' '}
+          بالنقر على "متابعة"، فإنك توافق على{' '}
           <Link
             href="/terms"
             className="underline underline-offset-4 hover:text-primary"
           >
-            Terms of Service
+            شروط الخدمة
           </Link>{' '}
-          and{' '}
+          و{' '}
           <Link
             href="/privacy"
             className="underline underline-offset-4 hover:text-primary"
           >
-            Privacy Policy
+            سياسة الخصوصية
           </Link>
           .
         </p>
@@ -41,7 +41,7 @@ export default function RegisterPage() {
             href="/login"
             className="underline underline-offset-4 hover:text-primary"
           >
-            Already have an account? Sign In
+            هل لديك حساب بالفعل؟ تسجيل الدخول
           </Link>
         </p>
       </div>
